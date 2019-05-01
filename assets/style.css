@@ -1,0 +1,51 @@
+body {
+    width: 100%;
+    margin: 0%;
+}
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 300px 500px 200px;
+    grid-template-areas: "header"
+                         "main"
+                         "footer"; 
+    grid-gap: 3px;
+}
+.container > header {
+    grid-area: header;
+}
+.container > main {
+    grid-area: main;
+}
+.container > footer {
+    grid-area: footer;
+}
+nav{
+    float: none;
+    width: 100%;
+}
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 14px 16px;
+    overflow: hidden;
+    background-color: rgb(44, 42, 42);
+    text-align: center
+}
+nav > ul > li {
+    display: inline-block;
+}
+li > a {    
+    color: wheat;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li > a:hover {
+    background-color: rgb(32, 32, 32);
+    color: white
+}
+h1 {
+    text-align: center;
+}
