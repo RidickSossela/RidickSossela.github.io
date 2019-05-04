@@ -10,30 +10,34 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    
 </head>
 <body>
-    <div class="container">
         <header>
-            <nav class="menu">
-                <div class="title-dev">Ridick Luiz Sossela - Desenvolvedor Web</div class="title-dev">
-                <ul>
-                    <li> <a href="#">HOME</a> </li>
-                    <li> <a href="#">SOBRE</a> </li>
-                    <li> <a href="#">SERVIÇOS</a> </li>
-                    <li> <a href="#">PORTFÓLIO</a> </li>
-                    <li> <a href="#">CONTATO</a> </li>
-                </ul>
+            <div class="title-dev">Ridick Luiz Sossela - Desenvolvedor Web</div>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+                <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"> <a class="nav-link" href="#">HOME</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">SOBRE</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">SERVIÇOS</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">PORTFÓLIO</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">CONTATO</a> </li>
+                    </ul>
+                </div>
             </nav>
         </header>
-        <main>
-            <section>
+        
+        <main class="row">
+            <section class="col-md">
                 <article class="sobre">
                     <header>
                         <h2>Sobre</h2>
                     </header>
                     <p> Olá, tenho 25 anos sou Tecnólogo em Gestao da Tecnologia da Informação
                         e aproximadamente a 4 anos descobri um amor pelo desenvolvimento de software.
-                        Desde então, busco sempre me atualizar em cursos, artigos ou qualquer outro material que agregue conhecimento.
+                        Desde então, procuro sempre me atualizar em cursos, artigos ou qualquer outro material que agregue conhecimento.
                         E assim poder garantir soluções com maior desempenho, produtividade e usuabilidade.
                     </p>
                     <p>
@@ -54,12 +58,12 @@
                 </article>
             </section>
         </main>
-        <footer>
-            Desenvolvido Por Ridick Sossela
+        <footer class="row">
+            <span>
+                <p>Desenvolvido Por Ridick Sossela</p>
+            </span>
         </footer>
-        
-    </div>
     
-    <script src="" async defer></script>
+    <script src="assets/bootstrap-4.3.1-dist/js/bootstrap.min.js" async defer></script>
 </body>
 </html>
