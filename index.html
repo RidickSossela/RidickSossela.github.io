@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     
 </head>
-<body>
-        <header>
+<body class="container-fluid">
+        <header class="row">
             <div class="title-dev">Ridick Luiz Sossela - Desenvolvedor Web</div>
             <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
                 <div class="container">
@@ -29,35 +29,85 @@
             </nav>
         </header>
         
-        <main class="row">
-            <section class="col-md">
-                <article class="sobre">
+        <main class="container">
+            <section class="row">
+                <article class="col-md sobre">
                     <header>
                         <h2>Sobre</h2>
                     </header>
-                    <p> Olá, tenho 25 anos sou Tecnólogo em Gestao da Tecnologia da Informação
-                        e aproximadamente a 4 anos descobri um amor pelo desenvolvimento de software.
-                        Desde então, procuro sempre me atualizar em cursos, artigos ou qualquer outro material que agregue conhecimento.
-                        E assim poder garantir soluções com maior desempenho, produtividade e usuabilidade.
-                    </p>
-                    <p>
-                        Minhas principais linguagens de programação são PHP e JavaScript.
-                        Para acelerar o desenvolvimento dos projetos sem perder a qualidade, 
-                        tenho tambem um bom conhecimento para aplicar os frameworks 
-                        Laravel no backend e no frontend Bootstrap, Vue.Js e Jquery.
-                    </p>
-                </article>
-                <article class="servicos">
-                    Aqui mostro o que eu faço
-                </article>
-                <article class="Portfolio">
-                    Aqui apresento alguns de meus projetos
-                </article>
-                <article class="contato">
-                    Aqui deixo informaçõas para contato
+                    <div>
+                        <p> Olá, tenho 25 anos sou Tecnólogo em Gestao da Tecnologia da Informação
+                            e aproximadamente a 4 anos descobri um amor pelo desenvolvimento de software.
+                            Desde então, procuro sempre me atualizar em cursos, artigos ou qualquer outro material que agregue conhecimento.
+                            E assim poder garantir soluções com maior desempenho, produtividade e usuabilidade.
+                        </p>
+                        <p>
+                            Minhas principais linguagens de programação são PHP e JavaScript.
+                            Para acelerar o desenvolvimento dos projetos sem perder a qualidade, 
+                            tenho tambem um bom conhecimento para aplicar os frameworks 
+                            Laravel no backend e no frontend Bootstrap, Vue.Js e Jquery.
+                        </p>
+                    </div>
                 </article>
             </section>
-        </main>
+            <section class="row">
+                <article class="col-md servicos">
+                    Aqui mostro o que eu faço
+                </article>
+            </section>
+            <section class="row">
+                <article class="col-md Portfolio">
+                    Aqui apresento alguns de meus projetos
+                </article>
+            </section>
+            <section class="row">
+                <article class="col-md contato">
+                    <header>
+                        <h2>Contato</h2>
+                    </header>
+                  
+                        <h3>Deixe uma mensagem</h3>
+                    
+                    <div class="row">
+                        <form action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-5">
+                                    <label class="" for="name">Nome: </label>
+                                    <input class="form-control" type="text" name="name" id="name" placeholder="Nome...">
+                                </div>
+                                <div class="form-group col-5">
+                                    <label class="" for="email">Email: </label>
+                                    <input class="form-control" type="text" name="email" id="email" placeholder="Email...">
+                                </div>  
+                                <div class="form-group col-10">
+                                    <label class="" for="name">Mensagem: </label>
+                                    <textarea class="form-control" name="mensagem" id="mensagem" cols="" rows="5" placeholder="Sua mensagem..."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="com-md-2 list-contato">
+                            <ul>
+                                <li>
+                                    <span>
+                                        <p>Email: ridick_sossela@hotmail.com</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <p>Telefone: 41 99614-3116</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <p>Facebook: <a href="https://facebook.com/ridicksossela">facebook.com/ridicksossela</a></p>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  
+                    </article>
+                </section>
+            </main>
         <footer class="row">
             <span>
                 <p>Desenvolvido Por Ridick Sossela</p>
