@@ -6,11 +6,9 @@ li > a:hover {
     background-color: #333;
     color: white;
 } 
-h1 {
+h1, h2 {
     text-align: center;
-}
-h2 {
-    text-align: center;
+    padding:20px;
 }
 nav {
     width: 100%
@@ -26,15 +24,12 @@ nav {
 }
 .sobre {
     text-align: justify;
-    margin: 10px 0;
+    margin: 10px;
     border-top: 1px solid #b9b3b3;
     padding: 20px 0;
     font-size: 20px;
 }
 .contato {
-    text-align: justify;
-    margin: 15px;
-    border-bottom: 2px solid #b9b3b3;
     padding: 20px;
     font-size: 20px;
 }
