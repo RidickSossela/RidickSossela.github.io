@@ -1,39 +1,109 @@
 body {
-    width: 100%;
-    background-color: #e7e5e5;
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    background-color: #ffffff;
 }
-li > a:hover {
-    background-color: #333;
-    color: white;
-} 
-h1, h2 {
+.cabecalho {
+    display: flex;
+    align-items: center;
+    background: #100e17;
+    border-bottom: solid 3px royalblue;
+    height: 80px;
+    position: -webkit-sticky; /* safari */
+    position: sticky;
+    top: 0px;
+}
+.nome {
+    flex-grow: 4;
+    font-weight: 600;
     text-align: center;
-    padding:20px;
+    color: antiquewhite
 }
-nav {
-    width: 100%
+.navegacao {
+    flex-grow: 8;
 }
-.title-dev {
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    
+}
+nav ul li {
+    list-style-type: none;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+nav ul li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px;
+    color: powderblue
+}
+nav ul li a:hover, .selected {
+    color: #ffffff;
+    border-bottom: solid 4px royalblue;
+    border-top: solid 2px royalblue;
+    border-radius: 25%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+    
+}
+
+.container-grid {
+    display: grid;
+}
+.grid-template-columns-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+article header {
+    margin: 20px 10px 5px 10px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.habilidades, .sobre {
+    margin: 10px 20px;
+    padding: 10px 20px;
+}
+.icons {
+    justify-content: center;
+    align-items: center;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+.list-item {
+    list-style-type: none;
+    height: 100px;
+    width: 100px;   
+    margin: 5px;
+    padding: 10px;
+    border: solid 1px royalblue;
+    border-radius: 10%;
+}
+
+.icons li img {
+    height: 100%;
     width: 100%;
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #e6dedd;
-    padding: 42px;
-    background-color: #333;
 }
-.sobre {
-    text-align: justify;
-    margin: 10px;
-    border-top: 1px solid #b9b3b3;
-    padding: 20px 0;
-    font-size: 20px;
+
+.conteudo-sobre {
+    margin: 0 20px;
+    font-size: 1.5em;
 }
-.contato {
-    padding: 20px;
-    font-size: 20px;
-}
-.list-contato ul li {
-    list-style: none;
-    margin: 30px 20px; 
+.conteudo-sobre p {
+    margin-top: 5px;
+    text-align: justify
 }
