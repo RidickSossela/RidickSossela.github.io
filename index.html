@@ -21,19 +21,17 @@
         <nav class="navegacao">
             <ul>
                 <li> <a href="#home">Home</a> </li>
-                <li> <a href="#sobre">Sobre</a> </li>
                 <li> <a href="#formacao">Formação</a> </li>
                 <li> <a href="#contato">Contato</a> </li>
             </ul>
         </nav>
     </header>
-    <main class="container-grid grid-template-columns-2">
-        <section class="sobre">
+    <main class="container-grid">
+        <section class="sobre" id="home">
             <article>
                 <header>
                     <h2>Sobre</h2>
-                </header>
-                <div class="conteudo-sobre">
+                </header><div class="conteudo-article">
                     <p> Olá, sou Tecnólogo em Gestão da Tecnologia da Informação pela FACSUL - Faculdade de Campina Grande do Sul.
                         O curso teve uma grade bem ampla, mas foi o desenvolvimento de software que me chamou mais a minha atenção.
                         Desde então, gosto de me atualizar nas novas tecnólogia da area.
@@ -46,8 +44,8 @@
                 </div>
             </article>
         </section>
-        <section>
-            <article class="habilidades">
+        <section class="habilidades" id="habilidades">
+            <article>
                 <header>
                     <h2>Habilidades</h2>
                 </header> 
@@ -83,7 +81,55 @@
                     </ul>
                 </div>
             </article>
-            
+        </section>
+        <section class="formacao" id="formacao">
+            <article>
+                <header>
+                    <h2>Formação Acadêmica</h2>
+                </header>
+                <div class="conteudo-article">
+                    <div class="card">
+                        <img src="./assets/img/diploma.png" alt="diploma" title="diploma">
+                        <div class="card-info">
+                            <h4>Gestão da Tecnologia da Informação – Facsul - 2017.</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="formacao" id="formacao">
+            <article>
+                <header>
+                    <h2>Formação Complementar</h2>
+                </header>
+                <div class="list-card">
+                    <div class="card">
+                        <img src="./assets/img/wb-moderno.jpg" alt="laravel" title="laravel">
+                        <div class="card-info">
+                            <h4>Web Moderno com JavaScript – Udemy – 2019.</h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/img/laravel.jpg" alt="laravel" title="laravel">
+                        <div class="card-info">
+                            <h4>Web Moderno com JavaScript – Udemy – 2019.</h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/img/laravelVue.jpg" alt="laravel" title="laravel">
+                        <div class="card-info">
+                            <h4>Web Moderno com JavaScript – Udemy – 2019.</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="contato" id="contato">
+            <article>
+                <header>
+                    <h2>Contato</h2>
+                </header>
+            </article>
         </section>
     </main>
 </body>
