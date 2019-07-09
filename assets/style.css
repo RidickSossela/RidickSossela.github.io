@@ -7,6 +7,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas: 'cabecalho' 'main' 'footer';
 }
+
 main {
     grid-area: main;
 }
@@ -34,6 +35,7 @@ main {
 .navegacao {
     flex-grow: 8;
 }
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -75,6 +77,7 @@ header {
                             "formacao  formacao-complementar"
                              "contato contato";
 }
+
 section {
     box-sizing: border-box;
     margin: 0 30px;
@@ -137,6 +140,7 @@ h2 {
 }
 .list-card {
     display: inline-block;
+    margin: 0 20px;
 }
 .card {
     display: flex;
@@ -174,20 +178,46 @@ h2 {
     justify-content: center;
 }
 .contato li {
-    flex-grow: 2;
     height: 100px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .contato li img {
     margin: 10px;
-    height: 50%;
-    vertical-align: middle;
+    width: 50px;
 }
 .contato li a {
     text-decoration: none;
-    color: #100e17;
+    color: royalblue;
 }
+@media (max-width: 360px){
+    .navegacao {
+        display: none;
+    }
+    .container-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "sobre" "habilidades" "formacao" "formacao-complementer" "contato"
+    }
+    .contato ul {
+        display: block;
+        text-align: center;
+    }
+    .contato ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+    }
+    .contato li a {
+        color: royalblue;
+    }
+    .contato img{
+        width: 100%;
+    }
+}
 footer {
     grid-area: footer;
 
@@ -199,3 +229,5 @@ footer {
     letter-spacing: 2px;
     opacity: 0.9;
 }
+/* Versão mobile */
+
