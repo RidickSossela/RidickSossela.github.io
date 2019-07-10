@@ -13,7 +13,7 @@ main {
 }
 .cabecalho {
     grid-area: cabecalho;
-
+    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -36,37 +36,29 @@ main {
     flex-grow: 8;
 }
 
-nav ul {
+.navegacao ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
     
 }
-nav ul li {
+.navegacao ul li {
     list-style-type: none;
     margin: 0 10px;
     padding: 0 10px;
 }
-nav ul li a {
+.navegacao ul li a {
     font-size: 1.2em;
     text-decoration: none;
     padding: 10px;
     color: #fff;
 }
-nav ul li a:hover, .navegacao .selected {
+.navegacao ul li a:hover, .navegacao .selected {
     color: #ffffff;
     border-bottom: solid 4px royalblue;
     border-top: solid 2px royalblue;
     border-radius: 25%;
-}
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-weight: 800;
-    letter-spacing: 2px;
 }
 
 .container-grid {
@@ -74,17 +66,20 @@ header {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 0.5fr;
     grid-template-areas:  "sobre habilidades" 
-                            "formacao  formacao-complementar"
-                             "contato contato";
+    "formacao  formacao-complementar"
+    "contato contato";
 }
 
 section {
     box-sizing: border-box;
-    margin: 0 30px;
+    margin: 0 20px;
 }
 
 article header {
     margin: 80px 10px 5px 10px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 h2 {
@@ -98,10 +93,6 @@ h2 {
     grid-area: sobre;
 }
 
-.icons {
-    justify-content: center;
-    align-items: center;
-}
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -124,7 +115,7 @@ h2 {
     width: 100%;
 }
 
-.conteudo-article {
+.sobre .conteudo-article {
     margin: 0 20px;
     font-size: 1.5em;
 }
@@ -139,32 +130,32 @@ h2 {
     grid-area: formacao-complementar;
 }
 .list-card {
-    display: inline-block;
-    margin: 0 20px;
+    margin: 0 0px;
+    width: 100%;
 }
 .card {
     display: flex;
     vertical-align: top;
+    box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: solid 1px #ccc;
     box-shadow: 0px 4px 20px  #bbb;
-    width: 500px;
-    height: 100px;
-    margin: 5px 20px;
+    width: auto;
+    height: 120px;
+    margin: 20px 20px;
     padding: 5px;
 }
 .card img {
-    width: 40%;
+    width: 30%;
     height: 100%;
 }
 .card-info {
     padding: 10px;
-    height: 90px;
-    overflow: hidden;
+    width: 90%;
 }
 .card-info h4 {
     font-size: 0.8em;
-    font-weight: 100;
+    font-weight: 700;
     margin: 0px;
 }   
 #contato {
@@ -193,34 +184,9 @@ h2 {
     text-decoration: none;
     color: royalblue;
 }
-@media (max-width: 360px){
-    .navegacao {
-        display: none;
-    }
-    .container-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: "sobre" "habilidades" "formacao" "formacao-complementer" "contato"
-    }
-    .contato ul {
-        display: block;
-        text-align: center;
-    }
-    .contato ul li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-    .contato li a {
-        color: royalblue;
-    }
-    .contato img{
-        width: 100%;
-    }
-}
 footer {
     grid-area: footer;
-
+    
     text-align: center;
     background: #100e17;
     border-top: solid 3px royalblue;
@@ -229,5 +195,72 @@ footer {
     letter-spacing: 2px;
     opacity: 0.9;
 }
+
+.menu-toggle {
+    display: none;
+}
+
+
 /* Versão mobile */
+@media (max-width: 768px){  
+    .container-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "sobre" "habilidades" "formacao" "formacao-complementer" "contato"
+    }
+}
+@media (max-width: 415px) {
+    .cabecalho {
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 60%;
+    }
+    .nome {
+        flex-grow: 1;
+        font-size: 10px;
+    }
+    .menu-toggle {
+        display: block;
+        margin: 10px;
+        position: fixed;
+        left: 10px; 
+        height: 40px;
+        color: #ccc;
+        background-color: #100e17;
+        border: #15121f;
+    }
+    .navegacao {
+        flex-grow: 11;
+    }
+    
+    .navegacao ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .navegacao ul li {
+        margin: 10px;    
+    }
+    
+    .contato ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    
+    .contato ul {
+        display: block;
+        text-align: center;
+    }
+    
+    .contato li a {
+        color: royalblue;
+    }
+    
+    .contato img{
+        width: 100%;
+    }
+}
 

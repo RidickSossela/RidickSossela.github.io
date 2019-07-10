@@ -7,3 +7,5 @@ window.onhashchange = (e) =>{
     oldLINK && oldLINK.classList.remove('selected');
     newLINK && newLINK.classList.add('selected');
 }
+
+/*  */
