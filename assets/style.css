@@ -17,23 +17,31 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background: #100e17;
+    align-content: center;
+    background: #2c3e50;
     border-bottom: solid 3px royalblue;
-    height: 80px;
+    height: auto;
     position: -webkit-sticky; /* safari */
     position: sticky;
     top: 0px;
     opacity: 0.9;
 }
+
+.title {
+    flex-grow: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nome, .nome a {
-    flex-grow: 4;
-    font-weight: 600;
     text-align: center;
+    font-weight: 600;
     color: antiquewhite;
     text-decoration: none;
 }
 .navegacao {
-    flex-grow: 8;
+    flex-grow: 6;
 }
 
 .navegacao ul {
@@ -76,7 +84,7 @@ section {
 }
 
 article header {
-    margin: 80px 10px 5px 10px;
+    margin: 90px 10px 5px 10px;
     text-align: center;
     font-weight: 800;
     letter-spacing: 2px;
@@ -188,7 +196,7 @@ footer {
     grid-area: footer;
     
     text-align: center;
-    background: #100e17;
+    background: #2c3e50;
     border-top: solid 3px royalblue;
     height: 80px;
     color: #fff;
@@ -196,7 +204,7 @@ footer {
     opacity: 0.9;
 }
 
-.menu-toggle {
+.menu-toggler {
     display: none;
 }
 
@@ -206,33 +214,60 @@ footer {
     .container-grid {
         grid-template-columns: 1fr;
         grid-template-areas: "sobre" "habilidades" "formacao" "formacao-complementer" "contato"
-    }
-}
-@media (max-width: 415px) {
+    }    
+    
     .cabecalho {
-        flex-direction: column;
-        position: fixed;
-        left: 0;
-        height: 100%;
-        width: 60%;
+        display: inline-block;
+        height: auto;
     }
+
     .nome {
-        flex-grow: 1;
-        font-size: 10px;
+        font-size: 1.0em;
     }
-    .menu-toggle {
+
+    .menu-toggler {
         display: block;
-        margin: 10px;
         position: fixed;
-        left: 10px; 
-        height: 40px;
+        top: 15px;
+        left: 5px;
+        margin: 0;
         color: #ccc;
-        background-color: #100e17;
-        border: #15121f;
+        background-color: #2c3e50;
+        font-size: 35px;
     }
+
+
     .navegacao {
-        flex-grow: 11;
-    }
+        position: fixed;
+        left: -80%;
+        width: 50%;
+        padding: 0 2% 0 5%;
+        background: #2c3e50;
+        color: #FFF;
+        height: 100%;
+        -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -moz-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          -ms-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
+          -o-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+       }
+       .navegacao:target {
+        left: -3px;
+        -webkit-box-shadow: 0 0 50px 0 #000;
+        box-shadow: 0 0 50px 0 #000;
+      }
+      .navegacao:target .close-menu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 60%;
+        right: 0; 
+      }
+
+
+
+
+
     
     .navegacao ul {
         flex-direction: column;
@@ -246,10 +281,10 @@ footer {
     .contato ul li {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
+        align-items: center;        
     }
-    
+}
+@media (max-width: 415px) {    
     .contato ul {
         display: block;
         text-align: center;
