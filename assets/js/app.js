@@ -1,15 +1,4 @@
-/* Aplicar estilo no menu selecionado */
-/* window.onhashchange = (e) =>{
-    const oldURL = e.oldURL.split('#')[1];
-    const newURL = e.newURL.split('#')[1];
-    const oldLINK = document.querySelector(`.nav a[href='#${oldURL}']`);
-    const newLINK = document.querySelector(`.nav a[href='#${newURL}']`);
-    oldLINK && oldLINK.classList.remove('selected');
-    newLINK && newLINK.classList.add('selected');
-} */
-
 /* Ativa/desativa menu mobile */
-
 const menuItems = document.querySelectorAll('.nav li a[href^="#"]');
 
 const menuToggler = document.querySelector('[href="#nav"]');
@@ -18,7 +7,7 @@ const closeMenuArea = document.querySelector('#close-menu');
 
 /*Area para abrir o menu */
 menuToggler.addEventListener('click', () => {
-    nav.classList.add('nav-target');
+    nav.classList.add('nav-active');
 })
 
 /* Areas para fechar menu */
@@ -29,12 +18,12 @@ menuItems.forEach( (item) => {
 
 /* Abre Menu */
 function openMenu() {
-    nav.classList.add('nav-target');
+    nav.classList.add('nav-active');
 }
 
 /* remove Menu */
 function closeMenu() {
-    nav.classList.remove('nav-target');
+    nav.classList.remove('nav-active');
 }
 
 /* -------------------------------------------------------- */
@@ -61,6 +50,11 @@ function scrollToIdOnClick(event) {
 menuItems.forEach(item => {
 	item.addEventListener('click', scrollToIdOnClick);
 });
+/* ---------------------------------------------------------- */
 
-
+/* Progress bar */
+const spans = Array.from( document.querySelectorAll('.loading-bar >span'));
+spans.forEach( (item) => {
+     item.style.width = item.innerHTML
+});
 
