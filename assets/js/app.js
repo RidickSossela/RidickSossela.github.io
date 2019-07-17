@@ -25,36 +25,82 @@ function openMenu() {
 function closeMenu() {
     nav.classList.remove('nav-active');
 }
-
 /* -------------------------------------------------------- */
 
 /* Scroll suave */
 function getScrollTopByHref(element) {
-	const id = element.getAttribute('href');
-	return document.querySelector(id).offsetTop;
+    const id = element.getAttribute('href');
+    return document.querySelector(id).offsetTop;
 }
 
 function scrollToPosition(to) {
-	window.scroll({
-	top: to,
-	behavior: "smooth",
-	})
+    window.scroll({
+        top: to,
+        behavior: "smooth",
+    })
 }
 
 function scrollToIdOnClick(event) {
-	event.preventDefault();
-	const to = getScrollTopByHref(event.currentTarget)- 80;
-	scrollToPosition(to);
+    event.preventDefault();
+    const to = getScrollTopByHref(event.currentTarget)- 80;
+    scrollToPosition(to);
 }
 
 menuItems.forEach(item => {
-	item.addEventListener('click', scrollToIdOnClick);
+    item.addEventListener('click', scrollToIdOnClick);
 });
+/* -------------------------------------------------------------- */
+
+/* Evitar excesso de chamadas do addEventListener */
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
 /* ---------------------------------------------------------- */
 
 /* Progress bar */
-const spans = Array.from( document.querySelectorAll('.loading-bar >span'));
-spans.forEach( (item) => {
-     item.style.width = item.innerHTML
-});
+const target = document.querySelectorAll('.loading-bar >span');
+const animationClass ='progress-active';
+const card = document.querySelector('.card');
 
+function animeScroll(){
+    const windowTop = window.pageYOffset + (window.innerHeight * 3)/4;
+    target.forEach(() =>{
+        if(windowTop>card.offsetTop){
+            addWidthBars(true);
+        }else{
+            addWidthBars(false);
+        }
+    });
+}
+animeScroll()
+
+if(target.length){
+    window.addEventListener('scroll', debounce(function(){
+        animeScroll()
+    },200)
+    )       
+}
+/* Adiciona/remove classe e valor width nas progress bars  */
+function addWidthBars(onScreen){
+    target.forEach( (item) => {
+        if(onScreen){
+            item.style.width = item.innerHTML
+            item.classList.add(animationClass);
+        }
+        else{
+            item.style.width = 0;
+            item.classList.remove('progress-active');
+        }
+    });
+}
