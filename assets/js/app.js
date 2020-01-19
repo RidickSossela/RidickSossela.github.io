@@ -1,14 +1,12 @@
 /* Ativa/desativa menu mobile */
 const menuItems = document.querySelectorAll('.nav li a[href^="#"]');
 
-const menuToggler = document.querySelector('[href="#nav"]');
+const menuToggler = document.querySelector('#menu-toggler');
 const nav = document.querySelector('#nav');
 const closeMenuArea = document.querySelector('#close-menu');
 
 /*Area para abrir o menu */
-menuToggler.addEventListener('click', () => {
-    nav.classList.add('nav-active');
-})
+menuToggler.addEventListener('click', openMenu);
 
 /* Areas para fechar menu */
 closeMenuArea.addEventListener('click', closeMenu);
@@ -29,7 +27,7 @@ function closeMenu() {
 
 /* Scroll suave */
 function getScrollTopByHref(element) {
-    const id = element.getAttribute('href');
+    let id = element.getAttribute('href');
     return document.querySelector(id).offsetTop;
 }
 
@@ -42,7 +40,7 @@ function scrollToPosition(to) {
 
 function scrollToIdOnClick(event) {
     event.preventDefault();
-    const to = getScrollTopByHref(event.currentTarget)- 80;
+    let to = getScrollTopByHref(event.currentTarget)- 80;
     scrollToPosition(to);
 }
 
@@ -50,6 +48,29 @@ menuItems.forEach(item => {
     item.addEventListener('click', scrollToIdOnClick);
 });
 /* -------------------------------------------------------------- */
+
+/* Calcula porcentagem cursada
+    - Pós Graduação
+*/
+    let element = document.querySelector('[date-ini]');
+    let dateIni = new Date( element.getAttribute('date-ini') );
+    let dateFim = new Date( element.getAttribute('date-fim') );
+    let dateNow = Date.now();
+    let oneDayMiliseconds = 1000 * 60 * 60 * 24;
+    
+    dateIniMiliseconds = dateIni.getTime();
+    dateFimMiliseconds = dateFim.getTime();
+    
+    let timeTotal = Math.abs(dateFimMiliseconds - dateIniMiliseconds);
+    let timeAttended = Math.abs(dateNow - dateIniMiliseconds);
+    
+    let daysTotal = timeTotal / oneDayMiliseconds;
+    let daysAttended = timeAttended / oneDayMiliseconds;
+    
+    let percentage = (daysAttended * 100 / daysTotal).toFixed(0);
+    
+    element.innerHTML = percentage + "%";
+    
 
 /* Evitar excesso de chamadas do addEventListener */
 function debounce(func, wait, immediate) {
@@ -91,6 +112,7 @@ if(target.length){
     },200)
     )       
 }
+
 /* Adiciona/remove classe e valor width nas progress bars  */
 function addWidthBars(onScreen){
     target.forEach( (item) => {
