@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,43 +13,49 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/style.css">
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
+
 <body>
     <header class="cabecalho">
-        <div class="title">
+        <nav class="nav" id="nav">
+            <a id="close-menu" class="close-menu"></a>
             <a class="menu-toggler" href="#nav">
                 <i class="fa fa-lg fa-bars"></i>
-            </a>     
-            <div class="nome">
-                <h1><a href="#home"> Ridick Sossela</a> </h1>
-            </div>
-        </div>
-        <nav class="nav" id="nav">
+            </a>
             <ul>
                 <li> <a href="#home">Home</a> </li>
                 <li> <a href="#formacao">Formação</a> </li>
                 <li> <a href="#contato">Contato</a> </li>
             </ul>
-            <a id="close-menu" class="close-menu"></a>
         </nav>
     </header>
     <main class="container-grid">
+        <section class="apresentacao">
+            <div class="title">
+                <div class="nome">
+                    <h1><a href="#home"> Ridick Luiz Sossela</a> </h1>
+                </div>
+            </div>
+        </section>
+
         <section class="sobre" id="home">
             <article>
                 <header>
                     <h2>Sobre</h2>
                 </header>
                 <div class="conteudo-article">
-                    <p> Olá, sou Tecnólogo em Gestão da Tecnologia da Informação pela FACSUL - Faculdade de Campina Grande do Sul.
-                        O curso teve uma grade bem ampla, mas foi o desenvolvimento de software que me chamou mais a atenção.
+                    <p> Olá, sou Tecnólogo em Gestão da Tecnologia da Informação pela FACSUL - Faculdade de Campina
+                        Grande do Sul.
+                        O curso teve uma grade bem ampla, mas foi o desenvolvimento de software que me chamou mais a
+                        atenção.
                         Desde então, gosto de me atualizar nas novas tecnologias da área.
                     </p>
                     <p>
                         Minhas principais linguagens de programação são PHP e JavaScript.
-                        Tenho bons conhecimentos nos frameworks 
+                        Tenho bons conhecimentos nos frameworks
                         Laravel, Bootstrap, Vue.Js e Jquery.
                     </p>
                 </div>
@@ -56,7 +65,7 @@
             <article>
                 <header>
                     <h2>Habilidades</h2>
-                </header> 
+                </header>
                 <div class="conteudo-article">
                     <ul class="list">
                         <li class="list-item">
@@ -185,4 +194,5 @@
     </footer>
 </body>
 <script src="assets/js/app.js"></script>
+
 </html>

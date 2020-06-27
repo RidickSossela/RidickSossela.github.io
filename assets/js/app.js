@@ -12,9 +12,10 @@ menuToggler.addEventListener('click', () => {
 
 /* Areas para fechar menu */
 closeMenuArea.addEventListener('click', closeMenu);
-menuItems.forEach( (item) => {
+menuItems.forEach((item) => {
     item.addEventListener('click', closeMenu);
 });
+
 
 /* Abre Menu */
 function openMenu() {
@@ -42,7 +43,7 @@ function scrollToPosition(to) {
 
 function scrollToIdOnClick(event) {
     event.preventDefault();
-    const to = getScrollTopByHref(event.currentTarget)- 80;
+    const to = getScrollTopByHref(event.currentTarget) - 80;
     scrollToPosition(to);
 }
 
@@ -54,9 +55,9 @@ menuItems.forEach(item => {
 /* Evitar excesso de chamadas do addEventListener */
 function debounce(func, wait, immediate) {
     var timeout;
-    return function() {
+    return function () {
         var context = this, args = arguments;
-        var later = function() {
+        var later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -70,37 +71,54 @@ function debounce(func, wait, immediate) {
 
 /* Progress bar */
 const target = document.querySelectorAll('.loading-bar >span');
-const animationClass ='progress-active';
+const animationClass = 'progress-active';
 const card = document.querySelector('.card');
 
-function animeScroll(){
-    const windowTop = window.pageYOffset + (window.innerHeight * 3)/4;
-    target.forEach(() =>{
-        if(windowTop>card.offsetTop){
+function animeScroll() {
+    const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
+    target.forEach(() => {
+        if (windowTop > card.offsetTop) {
             addWidthBars(true);
-        }else{
+        } else {
             addWidthBars(false);
         }
     });
 }
 animeScroll()
 
-if(target.length){
-    window.addEventListener('scroll', debounce(function(){
+if (target.length) {
+    window.addEventListener('scroll', debounce(function () {
         animeScroll()
-    },200)
-    )       
+    }, 200)
+    )
 }
 /* Adiciona/remove classe e valor width nas progress bars  */
-function addWidthBars(onScreen){
-    target.forEach( (item) => {
-        if(onScreen){
+function addWidthBars(onScreen) {
+    target.forEach((item) => {
+        if (onScreen) {
             item.style.width = item.innerHTML
             item.classList.add(animationClass);
         }
-        else{
+        else {
             item.style.width = 0;
             item.classList.remove('progress-active');
         }
     });
 }
+
+const addClass = (elem, classe) => elem.classList.add(classe);
+const removeClass = (elem, classe) => elem.classList.remove(classe);
+
+document.addEventListener('scroll', debounce(() => {
+    let header = document.querySelector("header");
+    let main = document.querySelector("main");
+
+    console.log(window.pageYOffset)
+    if (window.pageYOffset > main.offsetTop) {
+        removeClass(header, "anime-aumentar-cabecalho");
+        addClass(header, "anime-diminuir-cabecalho");
+    } else {
+        removeClass(header, "anime-diminuir-cabecalho");
+    }
+
+},500));

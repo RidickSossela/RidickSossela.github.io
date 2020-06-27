@@ -1,6 +1,40 @@
+.container-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto 0.5fr;
+    grid-template-areas:  "apresentacao apresentacao" "sobre sobre" "habilidades habilidades" 
+    "formacao formacao-complementar"
+    "contato contato";
+}
+
+.apresentacao {
+    grid-area: apresentacao;
+}
+
+.sobre {
+    grid-area: sobre;
+}
+
+.habilidades {
+    grid-area: habilidades;
+}
+
+.formacao-academica {
+    grid-area: formacao;
+}
+
+.formacao-complementar {
+    grid-area: formacao-complementar;
+}
+
+#contato {
+    grid-area: contato;
+}
+
 body {
     font-family: "Oswald", sans-serif;
     margin: 0;
+    padding-top: 250px;
     background-color: #ffffff;
     display: grid;
     grid-template-columns: 1fr;
@@ -8,7 +42,11 @@ body {
 }
 
 main {
+    margin-top: auto;
     grid-area: main;
+    width: 70%;
+    margin: 0 15%;
+
 }
 
 .cabecalho {
@@ -20,18 +58,28 @@ main {
     align-content: center;
     background: #2c3e50;
     border-bottom: solid 3px royalblue;
-    height: 60px;
-    position: -webkit-sticky; /* safari */
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0px;
     opacity: 0.9;
-    z-index: 1;
+    transition: .3s;
+    background-color: #000;
+}
+
+.anime-diminuir-cabecalho {
+    font-size: 50%;
+}
+
+.apresentacao {
+    
+    background-image: url('./img/back.png');
 }
 
 .title {
-    flex-grow: 6;
+    flex-grow: 10;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -45,21 +93,20 @@ h1 {
 
 .nome  h1 a {
     text-align: center;
-    font-size: 1.0em;
+    font-size: 3em;
     font-weight: 600;
     color: antiquewhite;
     text-decoration: none;
 }
 .nav {
-    flex-grow: 6;
+    flex-grow: 2;
 }
 
 .nav ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 0;
-    
 }
 
 .nav ul li {
@@ -69,7 +116,7 @@ h1 {
 }
 
 .nav ul li a {
-    font-size: 1.2em;
+    font-size: 2em;
     text-decoration: none;
     padding: 10px;
     color: #fff;
@@ -79,22 +126,13 @@ h1 {
     color: royalblue;
 }
 
-.container-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.5fr;
-    grid-template-areas:  "sobre habilidades" 
-    "formacao  formacao-complementar"
-    "contato contato";
-}
-
 section {
     box-sizing: border-box;
-    margin: 0 20px;
+    margin: 30px 0;
 }
 
 article header {
-    margin: 80px 10px 5px 10px;
+    margin: 30px;
     text-align: center;
     font-weight: 800;
     letter-spacing: 2px;
@@ -102,14 +140,6 @@ article header {
 
 h2 {
     margin: 0;
-}
-
-.habilidades {
-    grid-area: habilidades;
-}
-
-.sobre {
-    grid-area: sobre;
 }
 
 .list {
@@ -142,14 +172,6 @@ h2 {
 .conteudo-article p {
     margin-top: 0;
     text-align: justify
-}
-
-.formacao-academica {
-    grid-area: formacao;
-}
-
-.formacao-complementar {
-    grid-area: formacao-complementar;
 }
 
 /* Card de cursos */
@@ -213,9 +235,7 @@ h2 {
     100% { width: width}
     
 }
-#contato {
-    grid-area: contato;
-}
+
 .contato ul {
     list-style: none;
     margin: 20px;
@@ -256,7 +276,7 @@ footer {
 /* Versão mobile */
 @media (max-width: 768px){  
     .container-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
         grid-template-areas: "sobre" "habilidades" "formacao" "formacao-complementer" "contato"
     }    
     
