@@ -19,39 +19,46 @@
 </head>
 
 <body>
-    <header class="cabecalho">
+    <header class="cabecalho" id="home">
+
+
+        <a id="close-menu" class="close-menu"></a>
+        <a class="menu-toggler" id="menu-toggler">
+            <i class="fa fa-lg fa-bars"></i>
+        </a>
+    </nav>
+    <div class="title">
+        <div class="nome">
+            <h1>Ridick Luiz Sossela</h1>
+            <h2>Desenvolvedor Web</h2>
+        </div>
+    </div>
         <nav class="nav" id="nav">
-            <a id="close-menu" class="close-menu"></a>
-            <a class="menu-toggler" href="#nav">
-                <i class="fa fa-lg fa-bars"></i>
-            </a>
             <ul>
                 <li> <a href="#home">Home</a> </li>
                 <li> <a href="#formacao">Formação</a> </li>
                 <li> <a href="#contato">Contato</a> </li>
             </ul>
-        </nav>
     </header>
-    <main class="container-grid">
-        <section class="apresentacao">
-            <div class="title">
-                <div class="nome">
-                    <h1><a href="#home"> Ridick Luiz Sossela</a> </h1>
-                </div>
-            </div>
-        </section>
 
-        <section class="sobre" id="home">
+    <main class="container-grid" id="home">
+        <section class="sobre">
             <article>
                 <header>
                     <h2>Sobre</h2>
                 </header>
                 <div class="conteudo-article">
-                    <p> Olá, sou Tecnólogo em Gestão da Tecnologia da Informação pela FACSUL - Faculdade de Campina
-                        Grande do Sul.
-                        O curso teve uma grade bem ampla, mas foi o desenvolvimento de software que me chamou mais a
-                        atenção.
-                        Desde então, gosto de me atualizar nas novas tecnologias da área.
+                    <p>
+                        Sou tecnólogo em Gestão da Tecnologia da Informação e
+                        atualmente curso pós-graduação em Engenharia de Software,
+                        na universidade Estácio de Sá.
+                        Sempre que tenho um tempo procuro aperfeiçoar meus conhecimentos
+                        com cursos online.
+                    </p>
+                    <p>
+                        Sou focado nas minha responsabilidades e objetivos,
+                        procuro encarar as dificuldades como motivação,
+                        gosto de resolver problemas e poder ajudar.
                     </p>
                     <p>
                         Minhas principais linguagens de programação são PHP e JavaScript.
@@ -108,6 +115,15 @@
                     <div class="card">
                         <img src="./assets/img/diploma.png" alt="diploma" title="diploma">
                         <div class="card-info">
+                            <h4>Pós-Graduação Engenharia de Software - Universidade Estácio de Sá - 2019</h4>
+                            <div class="loading-bar">
+                                <span class="progress" date-ini="08 01 2019" date-fim="08 01 2020"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./assets/img/diploma.png" alt="diploma" title="diploma">
+                        <div class="card-info">
                             <h4>Gestão da Tecnologia da Informação – Facsul - 2017.</h4>
                             <div class="loading-bar">
                                 <span class="progress">100%</span>
@@ -128,7 +144,7 @@
                         <div class="card-info">
                             <h4>Web Moderno com JavaScript – Udemy – 2019.</h4>
                             <div class="loading-bar">
-                                <span class="progress">38%</span>
+                                <span class="progress">50%</span>
                             </div>
                         </div>
                     </div>
@@ -190,7 +206,7 @@
         </section>
     </main>
     <footer>
-        <h3>Desenvolvido por Ridick Sossela</h3>
+        <h3>Desenvolvido por Ridick Luiz Sossela</h3>
     </footer>
 </body>
 <script src="assets/js/app.js"></script>

@@ -1,21 +1,43 @@
+const addClass = (elem, classe) => elem.classList.add(classe);
+const removeClass = (elem, classe) => elem.classList.remove(classe);
+
+const substuirText = (elem, text) => {
+    document.querySelector(elem).innerHTML = text;
+}
+
+/* 
+    Anima o menu quando o scroll é ativado
+*/
+
+document.addEventListener('scroll', debounce(() => {
+    let titulo = document.querySelector(".title");
+
+    if (window.pageYOffset > 50) {
+        addClass(titulo, "anime-diminuir-cabecalho");
+        substuirText(".nome h2", "");
+        substuirText(".nome h1", "Dev - Ridick");
+    } else {
+        removeClass(titulo, "anime-diminuir-cabecalho");
+        substuirText(".nome h1", "Ridick Luiz Sossela");
+        substuirText(".nome h2", "Desenvolvedor Web");
+    }
+}, 200));
+
 /* Ativa/desativa menu mobile */
 const menuItems = document.querySelectorAll('.nav li a[href^="#"]');
 
-const menuToggler = document.querySelector('[href="#nav"]');
+const menuToggler = document.querySelector('#menu-toggler');
 const nav = document.querySelector('#nav');
 const closeMenuArea = document.querySelector('#close-menu');
 
 /*Area para abrir o menu */
-menuToggler.addEventListener('click', () => {
-    nav.classList.add('nav-active');
-})
+menuToggler.addEventListener('click', openMenu);
 
 /* Areas para fechar menu */
 closeMenuArea.addEventListener('click', closeMenu);
 menuItems.forEach((item) => {
     item.addEventListener('click', closeMenu);
 });
-
 
 /* Abre Menu */
 function openMenu() {
@@ -30,7 +52,7 @@ function closeMenu() {
 
 /* Scroll suave */
 function getScrollTopByHref(element) {
-    const id = element.getAttribute('href');
+    let id = element.getAttribute('href');
     return document.querySelector(id).offsetTop;
 }
 
@@ -43,7 +65,7 @@ function scrollToPosition(to) {
 
 function scrollToIdOnClick(event) {
     event.preventDefault();
-    const to = getScrollTopByHref(event.currentTarget) - 80;
+    let to = getScrollTopByHref(event.currentTarget) - 80;
     scrollToPosition(to);
 }
 
@@ -51,6 +73,29 @@ menuItems.forEach(item => {
     item.addEventListener('click', scrollToIdOnClick);
 });
 /* -------------------------------------------------------------- */
+
+/* Calcula porcentagem cursada
+    - Pós Graduação
+*/
+let element = document.querySelector('[date-ini]');
+let dateIni = new Date(element.getAttribute('date-ini'));
+let dateFim = new Date(element.getAttribute('date-fim'));
+let dateNow = Date.now();
+let oneDayMiliseconds = 1000 * 60 * 60 * 24;
+
+dateIniMiliseconds = dateIni.getTime();
+dateFimMiliseconds = dateFim.getTime();
+
+let timeTotal = Math.abs(dateFimMiliseconds - dateIniMiliseconds);
+let timeAttended = Math.abs(dateNow - dateIniMiliseconds);
+
+let daysTotal = timeTotal / oneDayMiliseconds;
+let daysAttended = timeAttended / oneDayMiliseconds;
+
+let percentage = (daysAttended * 100 / daysTotal).toFixed(0);
+
+element.innerHTML = percentage + "%";
+
 
 /* Evitar excesso de chamadas do addEventListener */
 function debounce(func, wait, immediate) {
@@ -92,6 +137,7 @@ if (target.length) {
     }, 200)
     )
 }
+
 /* Adiciona/remove classe e valor width nas progress bars  */
 function addWidthBars(onScreen) {
     target.forEach((item) => {
@@ -105,20 +151,3 @@ function addWidthBars(onScreen) {
         }
     });
 }
-
-const addClass = (elem, classe) => elem.classList.add(classe);
-const removeClass = (elem, classe) => elem.classList.remove(classe);
-
-document.addEventListener('scroll', debounce(() => {
-    let header = document.querySelector("header");
-    let main = document.querySelector("main");
-
-    console.log(window.pageYOffset)
-    if (window.pageYOffset > main.offsetTop) {
-        removeClass(header, "anime-aumentar-cabecalho");
-        addClass(header, "anime-diminuir-cabecalho");
-    } else {
-        removeClass(header, "anime-diminuir-cabecalho");
-    }
-
-},500));
