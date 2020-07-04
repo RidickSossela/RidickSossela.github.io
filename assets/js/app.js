@@ -1,9 +1,4 @@
-const addClass = (elem, classe) => elem.classList.add(classe);
-const removeClass = (elem, classe) => elem.classList.remove(classe);
-
-const substuirText = (elem, text) => {
-    document.querySelector(elem).innerHTML = text;
-}
+const substuirTexto = (elem, text) => document.querySelector(elem).innerHTML = text;
 
 /* 
     Anima o menu quando o scroll é ativado
@@ -12,42 +7,52 @@ const substuirText = (elem, text) => {
 document.addEventListener('scroll', debounce(() => {
     let titulo = document.querySelector(".title");
 
-    if (window.pageYOffset > 50) {
-        addClass(titulo, "anime-diminuir-cabecalho");
-        substuirText(".nome h2", "");
-        substuirText(".nome h1", "Dev - Ridick");
+    if (window.pageYOffset > 80) {
+        titulo.classList.add("anime-diminuir-cabecalho")
+        substuirTexto(".nome h2", "");
+        substuirTexto(".nome h1", "Dev - Ridick");
     } else {
-        removeClass(titulo, "anime-diminuir-cabecalho");
-        substuirText(".nome h1", "Ridick Luiz Sossela");
-        substuirText(".nome h2", "Desenvolvedor Web");
+        titulo.classList.remove("anime-diminuir-cabecalho")
+        substuirTexto(".nome h1", "Ridick Luiz Sossela");
+        substuirTexto(".nome h2", "Desenvolvedor Web");
     }
 }, 200));
 
-/* Ativa/desativa menu mobile */
+/*---- Ativa/desativa menu mobile ----*/
 const menuItems = document.querySelectorAll('.nav li a[href^="#"]');
-
 const menuToggler = document.querySelector('#menu-toggler');
 const nav = document.querySelector('#nav');
 const closeMenuArea = document.querySelector('#close-menu');
 
-/*Area para abrir o menu */
-menuToggler.addEventListener('click', openMenu);
+const openMenu = () => {
+    nav.classList.add('nav-active');
+    closeMenuArea.classList.add("close-menu");
+}
 
-/* Areas para fechar menu */
+const closeMenu = () => {
+    nav.classList.remove('nav-active');
+    closeMenuArea.classList.remove("close-menu");
+}
+
+/* 
+    Fechar ou abrir o menu clicando no menu-toggler
+    Se a classe "nav-active" significa que o menu esta aberto,
+    então chama o metodo closemenu(), caso contrario chama o metodo openMenu()
+*/
+const openCloseMenu = () => nav.classList.contains("nav-active") ? closeMenu() : openMenu();
+menuToggler.addEventListener("click", openCloseMenu);
+
+/* ---- Areas para fechar menu ----- */
+
+/* Clicando fora do menu */
 closeMenuArea.addEventListener('click', closeMenu);
+
+/* Clicando em algum link do menu  */
 menuItems.forEach((item) => {
     item.addEventListener('click', closeMenu);
 });
 
-/* Abre Menu */
-function openMenu() {
-    nav.classList.add('nav-active');
-}
 
-/* remove Menu */
-function closeMenu() {
-    nav.classList.remove('nav-active');
-}
 /* -------------------------------------------------------- */
 
 /* Scroll suave */
@@ -81,10 +86,10 @@ let element = document.querySelector('[date-ini]');
 let dateIni = new Date(element.getAttribute('date-ini'));
 let dateFim = new Date(element.getAttribute('date-fim'));
 let dateNow = Date.now();
-let oneDayMiliseconds = 1000 * 60 * 60 * 24;
+const oneDayMiliseconds = 1000 * 60 * 60 * 24;
 
-dateIniMiliseconds = dateIni.getTime();
-dateFimMiliseconds = dateFim.getTime();
+let dateIniMiliseconds = dateIni.getTime();
+let dateFimMiliseconds = dateFim.getTime();
 
 let timeTotal = Math.abs(dateFimMiliseconds - dateIniMiliseconds);
 let timeAttended = Math.abs(dateNow - dateIniMiliseconds);
@@ -95,24 +100,7 @@ let daysAttended = timeAttended / oneDayMiliseconds;
 let percentage = (daysAttended * 100 / daysTotal).toFixed(0);
 
 element.innerHTML = percentage + "%";
-
-
-/* Evitar excesso de chamadas do addEventListener */
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-        var context = this, args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
-/* ---------------------------------------------------------- */
+/* ------------------------------------------------------------------*/
 
 /* Progress bar */
 const target = document.querySelectorAll('.loading-bar >span');
@@ -151,3 +139,22 @@ function addWidthBars(onScreen) {
         }
     });
 }
+
+/* ------------------------------------------------------------- */
+
+/* Evitar excesso de chamadas do addEventListener */
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+/* ------------------------------------------------------------ */
