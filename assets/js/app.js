@@ -98,6 +98,7 @@ let daysTotal = timeTotal / oneDayMiliseconds;
 let daysAttended = timeAttended / oneDayMiliseconds;
 
 let percentage = (daysAttended * 100 / daysTotal).toFixed(0);
+percentage > 100 ? percentage = 100 : percentage = percentage;
 
 element.innerHTML = percentage + "%";
 /* ------------------------------------------------------------------*/
