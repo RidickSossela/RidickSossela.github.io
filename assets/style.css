@@ -1,0 +1,263 @@
+body {
+    box-sizing: border-box;
+    /* background-image: url('./img/img-bk-2.webp');
+    background-size: cover;
+    */
+    background-color: #111;
+    color: white;
+    margin: 0%;
+}
+
+.flex {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.menu-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 0.5em 1.5em;
+    padding: 0.5em 1.5em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #202020;
+    width: 100%;
+    padding: 0em 0em 5em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    margin: 0.5em;
+}
+
+#about {
+    /* background-image: url('./img/img-bk-2.webp');
+   background-position: center;
+   */
+}
+
+.about-desc {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-photo {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-photo img {
+    height: 15em;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    margin: 2em 1em;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container.col {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.description-text {
+    width: 70%;
+    font-size: 1.5em;
+}
+
+.container-svg {
+    position: relative;
+    width: 100%;
+}
+
+section:nth-child(even) {
+    background-color: #111;
+}
+
+section:nth-child(odd) {
+    background-color: #202020;
+}
+
+.black-svg {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    fill: #111;
+}
+
+.white-svg {
+    fill: #202020;
+}
+
+.white-svg {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    fill: #202020;
+}
+
+#experiences article,
+#my-services article {
+    background-color: #111;
+}
+
+.skills-icons {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-icons i {
+    margin: 0.25em;
+    font-size: 4em;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+#contact a {
+    margin: 0.5em;
+    padding: 0.5em;
+    color: white;
+}
+
+#contact a i {
+    margin: 0.25em;
+    font-size: 4em;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 18em;
+    height: 24em;
+    background-color: #111;
+    border: solid 1px #666;
+    padding: 1.5em;
+    margin: 3em 1.5em;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: centers;
+}
+
+.card h5 {
+    margin: 0.25em;
+    font-size: 3em;
+}
+
+.card-body {
+    font-size: 1.5em;
+    
+}
+
+.card-icon-wrapper {
+    border-radius: 50%;
+    border: solid 1px #666;
+    height: 6em;
+    width: 6em;
+    position: relative;
+    box-sizing: content-box;
+}
+
+.card-img {
+    margin: 5px 0px;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.dot-wrapper {
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+    animation: service-dot_1 2s linear infinite;
+    animation-play-state: paused;
+}
+
+.card.card-service:hover .dot-wrapper {
+    animation-play-state: running
+}
+
+@keyframes service-dot_1 {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background: #666;
+    border-radius: 50%;
+    left: 45px;
+    top: -7px;
+    position: relative;
+}
+
+
+.dot2 {
+    width: 15px;
+    height: 15px;
+    background: #666;
+    border-radius: 50%;
+    left: 45px;
+    top: 72px;
+    position: relative;
+}
