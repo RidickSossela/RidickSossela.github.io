@@ -54,12 +54,16 @@
     }
 
     nav {
+        z-index: 1;
         display: flex;
         justify-content: flex-end;
+        position: fixed;
+        width: 100%;
+        background-color: #111;
     }
 
     nav input:checked~.menu-items {
-        top: 2em;
+        top: 3em;
         -webkit-box-shadow: 0 0 50px 0 #000;
         box-shadow: 0 0 50px 0 #000;
     }
@@ -75,6 +79,10 @@
         display: flex;
         padding: 0.5em;
         font-size: 2em;
+    }
+
+    .mobile-menu i {
+        margin-top: 1em;
     }
 
     #menu-hamburger {
@@ -315,7 +323,6 @@ a:active {
 
 .card-icon-wrapper {
     position: relative;
-    z-index: 1;
     width: 100px;
     height: 100px;
     line-height: 100px;
