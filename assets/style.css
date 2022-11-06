@@ -42,7 +42,7 @@
 @media (max-width:641px) {
     .menu-items {
         position: fixed;
-        top: -60%;
+        top: -25em;
         width: 100%;
         padding: 0 2% 0 5%;
         background: #111;
