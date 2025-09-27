@@ -1,419 +1,209 @@
-html {
-    scroll-behavior: smooth;
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --font-sans: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
-    background-color: #111;
-    color: white;
-    margin: 0%;
-}
-
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col {
-    flex-direction: column;
-}
-
-.row {
-    flex-direction: row;
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    align-items: center;
-}
-
-ul {
-    display: flex;
-    align-items: flex-end;
-    margin: 0;
-}
-
-ul li {
-    list-style-type: none;
-    margin: 0.5em;
-    padding: 0.5em;
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #202020;
-    width: 100%;
-    padding: 3em 0em 5em;
-    flex-wrap: wrap;
-}
-
-h1 {
-    font-size: 2em;
-}
-
-p {
-    margin: 0.5em;
-}
-
-
-
-.mobile-menu,
-#menu-hamburger {
-    display: none;
-}
-
-.about-desc {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
-.my-photo {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-}
-
-.my-photo img {
-    height: 15em;
-    border-radius: 50%;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    transition: background-color 0.5s ease;
 }
 
 .container {
-    display: flex;
-    margin: 1em;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.container.col {
-    justify-content: flex-start;
-    align-items: center;
+.section {
+    padding: 80px 0;
 }
 
-.description-text {
-    width: 70%;
-    font-size: 1.5em;
-    min-width: 10em;
+.bg-light {
+    background-color: var(--light-bg);
 }
 
-.container-svg {
-    position: relative;
-    width: 100%;
-}
-
-section:nth-child(even) {
-    background-color: #111;
-}
-
-section:nth-child(odd) {
-    background-color: #202020;
-}
-
-.black-svg {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    fill: #111;
-}
-
-.white-svg {
-    fill: #202020;
-}
-
-.white-svg {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    fill: #202020;
-}
-
-#experiences article,
-#my-services article {
-    background-color: #111;
-}
-
-.skills-icons {
-    justify-content: space-between;
-    align-items: center;
-}
-
-.skills-icons i {
-    margin: 0.25em;
-    font-size: 3em;
-}
-
-a,
-a:hover,
-a:focus,
-a:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-#contact a {
-    margin: 0.5em;
-    padding: 0.5em;
-    color: white;
-}
-
-#contact a i {
-    margin: 0.25em;
-    font-size: 3em;
-}
-
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    width: 18em;
-    background-color: #111;
-    border: solid 1px #666;
-    padding: 2em 1.5em;
-    margin: 3em 1.5em;
-}
-
-.card-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: centers;
-}
-
-.card h5 {
-    margin: 0.25em;
-    font-size: 3em;
-}
-
-.card-body {
-    font-size: 1.5em;
-
-}
-
-.card-icon-wrapper {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    border: 1px solid #666;
-    background: transparent;
-    box-sizing: content-box;
-    border-radius: 50%;
-    color: #ddd;
-}
-
-.card-img {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.dot-wrapper {
-    width: 100%;
-    height: 100%;
-    left: 56%;
-    top: 8%;
-    transform: rotate(0deg);
-    animation: service-dot_1 2s linear infinite;
-    animation-play-state: paused;
-
-}
-
-.card.card-service:hover .dot-wrapper {
-    animation-play-state: running
-}
-
-.dot,
-.dot2 {
-    width: 15px;
-    height: 15px;
-    background: #666;
-    border-radius: 50%;
-    left: 15px;
-    top: 0;
-    position: relative;
-}
-
-
-.dot2 {
-    right: -70px;
-    left: auto;
-    top: auto;
-    bottom: -70px;
-}
-
-@keyframes service-dot_1 {
-    0% {
-        transform: rotate(0deg)
-    }
-
-    to {
-        transform: rotate(1turn)
-    }
-}
-
-.scroll-top-page {
-    position: fixed;
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
-    right: 0.5em;
-    bottom: 0.5em;
-    font-size: 2em;
-    line-height: 1.5em;
+h2 {
     text-align: center;
-    background-color: #000;
-    vertical-align: middle;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    position: relative;
 }
 
-.scroll-top-page {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 1s, opacity 1s linear;
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 5px;
 }
 
-.scroll-top-page.show {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s linear;
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    overflow: hidden;
 }
 
-/* 20221010 RLS */
-@media (min-width:320px) and (min-height: 200px) {
-    :root {
-        font-size: clamp(1vw, 4vw, 3vw);
-    }
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-@media (min-width:481px) {
-    :root {
-        font-size: clamp(0.5vw, 4vw, 1.75vw);
-    }
+.hero h2 {
+    color: #a8b9e6;
+    margin-bottom: 30px;
 }
 
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-@media (min-width:641px) {
-    :root {
-        font-size: clamp(0.5vw, 4vw, 1.5vw);
-    }
-
-    .menu-items {
-        display: flex;
-        justify-content: flex-end;
-    }
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
-@media (max-width:641px) {
-    .menu-top {
-        display: flex;
-        align-items: center;
-        height: 2.5em;
-        justify-content: flex-end;
-    }
-
-    nav {
-        top: 0;
-        z-index: 1;
-        display: flex;
-        justify-content: space-evenly;
-        position: fixed;
-        width: 100%;
-        background-color: #111;
-        align-items: center;
-        text-align: center;
-    }
-
-    nav h1 {
-        flex: 2;
-    }
-
-    .menu-items {
-        position: fixed;
-        top: -25em;
-        left: 0;
-        width: 100%;
-        padding: 0;
-        background: #111;
-        -webkit-transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -moz-transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -ms-transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -o-transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    nav span.mobile-menu {
-        flex: 2;
-        text-align: center;
-        justify-content: center;
-    }
-
-    nav .menu-items.open {
-        top: 4em;
-        left: 0;
-        -webkit-box-shadow: 0 0 50px 0 #000;
-        box-shadow: 0 0 50px 0 #000;
-    }
-
-    .mobile-menu,
-    #menu-hamburger {
-        display: flex;
-        padding: 0.5em;
-        font-size: 2em;
-    }
-
-    .mobile-menu i {
-        cursor: pointer;
-    }
-
-    #menu-hamburger {
-        background-color: transparent;
-        border: none;
-        color: #fff;
-    }
-
-    ul {
-        flex-direction: column;
-    }
-
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
-/* tablet, landscape iPad, lo-res laptops ands desktops */
-@media (min-width:961px) {
-    :root {
-        font-size: clamp(0.5vw, 4vw, 1.25vw);
-    }
-    
-    .mobile-menu,
-    #menu-hamburger {
-        display: none;
-    }
-
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-@media (min-width:2000px) {
-    :root {
-        font-size: clamp(0.5vw, 4vw, 1vw);
+.service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* --- ESTILOS PARA A NOVA TABELA DE STACK --- */
+
+.stack-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.stack-table-container {
+    overflow-x: auto; /* Garante que a tabela seja responsiva em telas pequenas */
+    padding: 0 10px;
+}
+
+.stack-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Importante para o border-radius funcionar na tabela */
+}
+
+.stack-table-container th, 
+.stack-table-container td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.stack-table-container th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.stack-table-container tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping suave */
+}
+
+.stack-table-container tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Remove os estilos antigos baseados em flexbox para a stack */
+#stack .stack-list {
+    display: none; 
+    /* Você pode remover este seletor, mas o display:none desabilita o código antigo */
+}
+
+.cta-final {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-final h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta-final .secondary {
+    background-color: white;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.cta-final .secondary:hover {
+    background-color: #e2e6ea;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero h2 {
+        font-size: 1.6em;
+    }
+    .section {
+        padding: 50px 0;
     }
 }

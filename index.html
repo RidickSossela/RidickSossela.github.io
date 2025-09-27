@@ -1,211 +1,125 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ridick L. Sossela</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script defer src="assets/js/app.js"></script>
-    </head>
-    <body id="body">
-        <header class="menu-top">
-            <nav>
-                <h1>Ridick Sossela</h1>
-                <button class="mobile-menu" id="menu-hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="menu-items">
-                    <li><a href="#about">Sobre</li></a>
-                    <li><a href="#my-services">Serviços</li></a>
-                    <li><a href="#skills">Skills</li></a>
-                    <li><a href="#formation">Formação</li></a>
-                    <li><a href="#experiences">Experiências</li></a>
-                    <li><a href="#contact">Contato</li></a>
-                </ul>
-            </nav>
-        </header>
-        <main id="main">
-            <section id="about">
-                <article>
-                    <h1>Desenvolvedor web</h1>
-                    <div class="container">
-                        <div class="container col my-photo">
-                            <img src="./assets/img/15822708_1262080133848851_5093543038838036192_n.jpg" alt="" srcset="">
-                        </div>
-                        <div class="container col about-desc description-text">
-                            <p>
-                                Sou pós-graduado em Engenharia de software pela Universidade Estácio de Sá. Com foco em
-                                aplicações web,
-                                atuo como desenvolvedor full stack, com conhecimentos sólidos na análise, planejamento,
-                                execução e implementação de sistemas.
-                            </p>
-                            <p>Estou constantemente buscando aperfeiçoar meus conhecimentos.</p>
-                        </div>
-                    </div>
-                </article>
-                <div class="container-svg">
-                    <svg class="black-svg" x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "></polygon>
-                    </svg>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridick Luiz Sossela | Desenvolvedor de Software</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ridick Luiz Sossela</h1>
+            <h2>Desenvolvedor de Software Full Stack.</h2>
+            <p>Especialista em soluções Web que geram impacto e resultados.</p>
+            <a href="#contact" class="cta-button">Iniciar Meu Projeto</a>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Sobre Mim e Minha Expertise</h2>
+            <p>
+                Pós-graduado em <strong>Engenharia de Software</strong> (Estácio de Sá), sou um desenvolvedor Full Stack com <strong>mais de 4 anos de atuação</strong> no mercado. 
+                Meu foco é ir além do código, aplicando conhecimentos sólidos desde a <strong>análise</strong> e <strong>planejamento</strong> até a <strong>implementação</strong> final, garantindo a excelência em todas as etapas do seu projeto web. Mantenho um <strong>compromisso constante com o aperfeiçoamento técnico</strong> e as inovações do mercado.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2>O Que Eu Entrego: Meus Principais Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Consultoria e Arquitetura de Projetos</h3>
+                    <p>Defino a melhor stack tecnológica e a arquitetura de sistema mais eficiente, garantindo um projeto <strong>robusto</strong> desde o início e focado em <strong>escalabilidade</strong>.</p>
                 </div>
-            </section>
-            <section id="my-services">
-                <h1>Serviços</h1>
-                <article class="flex row">
-                    <div class="card card-service">
-                        <div class="card-content">
-                            <div class="card-title">
-                                <div class="card-icon-wrapper">
-                                    <div class="dot-wrapper">
-                                        <div class="dot"></div>
-                                        <div class="dot2"></div>
-                                    </div>
-                                    <img class="card-img" src="./assets/img/web-responsible.png" alt="web responsible"
-                                        srcset="">
-                                </div>
-                                <h5>Sites responsivos</h5>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    Desenvolvimento de sites que se adaptam ao tamanho da tela que o usuário esta acessando.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card-service">
-                        <div class="card-content">
-                            <div class="card-title">
-                                <div class="card-icon-wrapper">
-                                    <div class="dot-wrapper">
-                                        <div class="dot"></div>
-                                        <div class="dot2"></div>
-                                    </div>
-                                    <img class="card-img" src="./assets/img/web-service.png" alt="web responsible"
-                                        srcset="">
-                                </div>
-                                <h5>Web services</h5>
-                            </div>
-                            <div class="card-body">
-                                <p>
-                                    Construção de sistemas capazes de se comunicarem com diversas plataformas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <div class="container-svg">
-                    <svg class="white-svg" x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "></polygon>
-                    </svg>
+
+                <div class="service-card">
+                    <h3>Desenvolvimento Full Stack</h3>
+                    <p>Eu cuido do seu projeto de ponta a ponta, desde a <strong>análise</strong> até a <strong>implementação</strong> final, garantindo agilidade e consistência.</p>
                 </div>
-            </section>
-            <section id="skills">
-                <h1>Skills</h1>
-                <article>
-                    <div class="container col">
-                        <div class="description-text">
-                            <p>
-                                Conhecimentos em sistemas operacionais Linux, servidores apache e controle de versionamento
-                                Git.
-                                Minhas principais linguagens de programação são JavaScript e PHP. Trabalho com banco de
-                                dados MySql
-                                e com frameworks como Laravel, Node js, Puppeteer, Vue js e JQuery.
-                                Tenho experiências em desenvolvimento de Api's Rest full e criação de robôs para automação
-                                usando
-                                Puppeteer.
-                            </p>
-                            <div class="flex skills-icons">
-                                <i class="fa-brands fa-square-js" title="JavaScript"></i>
-                                <i class="fa-brands fa-node" title="Node JS"></i>
-                                <i class="fa-brands fa-git-alt" title="Git"></i>
-                                <i class="fa-brands fa-php" title="PHP"></i>
-                                <i class="fa-brands fa-laravel" title="Laravel"></i>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <div class="container-svg">
-                    <svg class="black-svg" x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "></polygon>
-                    </svg>
+
+                <div class="service-card">
+                    <h3>Integração e Web Services</h3>
+                    <p>Crio <strong>APIs RESTful</strong> robustas para garantir a <strong>comunicação segura</strong> e eficiente entre seu sistema e outras plataformas.</p>
                 </div>
-            </section>
-            <section id="experiences">
-                <div class="container">
-                    <article id="formation">
-                        <h1>Formação</h1>
-                        <div class="description-text">
-                            <p>
-                                <i class="fa-regular fa-circle-check"></i>
-                                Pós-Graduação Engenharia de Software - Universidade Estácio de Sá - 2019.
-                            </p>
-                            <p>
-                                <i class="fa-regular fa-circle-check"></i>
-                                Gestão da Tecnologia da Informação – Facsul - 2017.
-                            </p>
-                        </div>
-                    </article>
-                    <article>
-                        <h1>Experiências profissionais</h1>
-                        <div class="description-text">
-                            <p>
-                                <i class="fa-regular fa-circle-check"></i>
-                                <b>Desenvolvedor de Software - Pinhão Tecnologia - 01/2021 até o momento.</b><br>
-                            </p>
-                            <p>
-                                <i class="fas fa-clipboard-list"></i>
-                                <b>Atividades:</b>
-                            </p>
-                            <p>
-                                Atuando como desenvolvedor full stack, configurando ambientes de desenvolvimentos e
-                                auxiliando na implementação de servidores para produção.
-                            </p>
-                            <p>
-                                Participo de todo o processo de desenvolvimento, desde a analise,
-                                planejamento até o desenvolvimento e a implementação, tanto em novas funcionalidades para
-                                sistemas já existentes ou para novos softwares.
-                            </p>
-                        </div>
-                    </article>
+
+                <div class="service-card">
+                    <h3>Websites Responsivos (UX)</h3>
+                    <p>Desenvolvo interfaces modernas que <strong>se adaptam perfeitamente</strong> a qualquer dispositivo, garantindo a melhor experiência do usuário.</p>
                 </div>
-                <div class="container-svg">
-                    <svg class="white-svg" x="0px" y="0px" viewBox="0 186.5 1920 113.5">
-                        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 "></polygon>
-                    </svg>
+
+                <div class="service-card">
+                    <h3>Automação de Processos</h3>
+                    Desenvolvimento de soluções que otimizam rotinas repetitivas, garantindo <strong>alta precisão, redução de custos</strong> e maior eficiência operacional.
                 </div>
-            </section>
-            <section id="contact">
-                <h1>Contato</h1>
-                <article>
-                    <div class="container row">
-                        <a href="https://wa.me/5541996143116">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="mailto:ridick_sossela@hotmail.com">
-                            <i class="far fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ridick-sossela-673a36188/">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/RidickSossela">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </article>
-            </section>
-        </main>
-        <footer>
-            <a href="#body" class="scroll-top-page">
-                <i class="fa fa-arrow-up"></i>
-            </a>
-        </footer>
-    </body>
+
+                <div class="service-card">
+                    <h3>Otimização e Manutenção de Sistemas</h3>
+                    <p>Realizo a análise de performance, correção de bugs, e otimização de ambiente para garantir a <strong>estabilidade</strong> e o <strong>alto desempenho</strong> da sua aplicação.</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="stack" class="section">
+        <div class="container">
+            <h2>Minha Base Tecnológica</h2>
+            
+            <h3>Stack de Liderança e Arquitetura</h3>
+            <p class="stack-intro">
+                Minha atuação foca na <strong>definição da arquitetura</strong> e na <strong>gestão técnica</strong>, assegurando que a stack escolhida seja <strong>robusta, eficiente e escalável</strong>. Conduzo a utilização de tecnologias para transformar a visão do projeto em resultados de alto desempenho.
+            </p>
+
+            <div class="stack-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Tecnologias Chave</th>
+                            <th>Foco em Liderança/Gestão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Backend e Framework</strong></td>
+                            <td><strong>PHP</strong> (<strong>Laravel</strong>), <strong>JavaScript</strong> (Node.js), <strong>Doctrine ORM</strong>.</td>
+                            <td>Definição de padrões de código, <em>code review</em> e arquitetura de <em>web services</em> escaláveis.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dados e Performance</strong></td>
+                            <td><strong>MySQL</strong></td>
+                            <td>Otimização de consultas, modelagem de dados e garantia da performance do banco em alto volume.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infraestrutura e Versionamento</strong></td>
+                            <td>Ambiente <strong>Linux</strong>, Servidores <strong>Apache</strong>, <strong>Git</strong>.</td>
+                            <td>Gestão de ambientes de desenvolvimento/produção (DevOps Básico) e estratégia de <em>branching</em> e <em>merge</em> (Git Flow).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section cta-final">
+        <div class="container">
+            <h3>Vamos Construir Seu Próximo Projeto?</h3>
+            <p>Envie-me um e-mail. Estou pronto para aplicar minhas habilidades para gerar resultados concretos para o seu negócio.</p>
+            <a href="mailto:ridicklsossela@gmail.com" class="cta-button secondary">Enviar E-mail para Ridick</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ridick Luiz Sossela | Desenvolvedor de Software</p>
+            </div>
+    </footer>
+
+</body>
+<script src="assets/js/app.js"></script>
 </html>
