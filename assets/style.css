@@ -114,55 +114,53 @@ h2::after {
     font-size: 1.3em;
 }
 
-/* --- ESTILOS PARA A NOVA TABELA DE STACK --- */
+.stack-subtitle {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #555;
+}
 
 .stack-intro {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
 }
 
-.stack-table-container {
-    overflow-x: auto; /* Garante que a tabela seja responsiva em telas pequenas */
-    padding: 0 10px;
-}
-
-.stack-table-container table {
-    width: 100%;
-    border-collapse: collapse;
+.stack-blocks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     margin-top: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    overflow: hidden; /* Importante para o border-radius funcionar na tabela */
 }
 
-.stack-table-container th, 
-.stack-table-container td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
+.stack-block {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    word-break: break-word; 
 }
 
-.stack-table-container th {
-    background-color: var(--primary-color);
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9em;
+.stack-block:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
 }
 
-.stack-table-container tr:nth-child(even) {
-    background-color: #f9f9f9; /* Zebra striping suave */
+.stack-block h4 {
+    color: var(--primary-dark);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 5px;
 }
 
-.stack-table-container tbody tr:hover {
-    background-color: #f0f0f0;
-}
-
-/* Remove os estilos antigos baseados em flexbox para a stack */
-#stack .stack-list {
-    display: none; 
-    /* Você pode remover este seletor, mas o display:none desabilita o código antigo */
+.stack-block p {
+    font-size: 0.95em;
+    margin-bottom: 8px;
 }
 
 .cta-final {
@@ -194,7 +192,6 @@ footer {
     padding: 20px 0;
     font-size: 0.9em;
 }
-
 
 @media (max-width: 768px) {
     .hero h1 {
